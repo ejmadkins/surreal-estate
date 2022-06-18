@@ -8,8 +8,12 @@ const NavBar = () => {
       <img className="nav-icon" src={navIcon} alt="nav icon" />
       <h2>Surreal Estate</h2>
       <ul className="navbar-links">
-        <li className="navbar-links-item">View Properties</li>
-        <li className="navbar-links-item">Add a Property</li>
+        <li className="navbar-links-item">
+          <a href="#top">View Properties</a>
+        </li>
+        <li className="navbar-links-item">
+          <a href="#top">Add a Property</a>
+        </li>
       </ul>
     </div>
   );
