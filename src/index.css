@@ -9,12 +9,12 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: lightgrey;
 }
 
 html,
 body {
   height: 100%;
+  background-color: rgb(245, 245, 245);
 }
 
 body {

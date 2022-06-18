@@ -1,0 +1,17 @@
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid grey;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+.navbar-links-item {
+  padding: 0 30px;
+  display: inline-block;
+}
