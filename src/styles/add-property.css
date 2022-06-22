@@ -2,9 +2,10 @@
   padding: 1rem;
 }
 
-.add-property-form {
+.add-property-card {
   margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   max-width: 50rem;
   border: 1px solid #7b9aff;
@@ -14,8 +15,21 @@
   position: relative;
 }
 
-.add-property-form > form {
+.add-property-form-alert {
+  /* position: relative; */
+  padding: 2vw;
+}
+
+.add-property-form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
   min-width: 90%;
+  position: relative;
+}
+
+.add-property-form > form {
+  min-width: 100%;
 }
 
 .add-property-form label {

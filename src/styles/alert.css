@@ -1,0 +1,17 @@
+.alert {
+  margin: 20px auto;
+  padding: 5px;
+  font-size: 20px;
+  min-width: 90%;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #96ffc5;
+  color: rgb(62, 135, 62);
+  border: 1px solid rgb(62, 135, 62);
+}
+
+.alert-error {
+  background-color: #ff9696;
+}
