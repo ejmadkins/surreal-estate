@@ -1,3 +1,47 @@
 .add-property {
   padding: 1rem;
 }
+
+.add-property-form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  max-width: 50rem;
+  border: 1px solid #7b9aff;
+  border-radius: 20px;
+  background-color: rgb(201, 230, 255);
+  padding: 2vw;
+  position: relative;
+}
+
+.add-property-form > form {
+  min-width: 90%;
+}
+
+.add-property-form label {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin: 0 0 2vh 0;
+}
+
+.add-property-form input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  margin: 0.9vw 0;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.add-property-form select {
+  display: block;
+  background-color: white;
+  width: 100%;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  margin: 0.9vw 0;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+}
