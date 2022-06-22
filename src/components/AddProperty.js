@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import createProperty from "../requests/createProperty";
 import "../styles/add-property.css";
 
 const AddProperty = () => {
@@ -17,6 +18,7 @@ const AddProperty = () => {
   const [fields, setFields] = useState(initialState.fields);
   const handleAddProperty = (event) => {
     event.preventDefault();
+    createProperty(fields);
     console.log(fields);
   };
   const handleFieldChange = (event) => {
