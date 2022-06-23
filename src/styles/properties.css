@@ -1,5 +1,16 @@
+.properties {
+  display: flex;
+  flex-direction: row;
+}
+
 .property-cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.sidebar {
+  min-width: 20rem;
+  height: 100vh;
+  background-color: white;
 }

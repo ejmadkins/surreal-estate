@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import PropertyCard from "./PropertyCard";
+import SideBar from "./SideBar";
 import Alert from "./Alert";
 import getProperty from "../requests/getProperty";
 import "../styles/properties.css";
@@ -20,8 +23,19 @@ const Properties = () => {
     getProperty(setResults, setAlert);
   }, []);
 
+  const { search } = useLocation();
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .then(({ data }) => setResults(data))
+      .catch((err) => console.error(err));
+  }, [search]);
+
   return (
-    <>
+    <div className="properties">
+      <div className="sidebar">
+        <SideBar />
+      </div>
       <Alert message={alert.message} success={alert.isSuccess} />
       <div className="property-cards">
         {results.map((property) => (
@@ -36,7 +50,7 @@ const Properties = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 export default Properties;

@@ -1,0 +1,8 @@
+.filter-city {
+  padding: 10px;
+}
+
+.filter-city > a {
+  text-decoration: none;
+  font-size: large;
+}

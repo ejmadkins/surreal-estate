@@ -109,9 +109,8 @@ const AddProperty = () => {
                 placeholder="Manchester"
               >
                 <option value="Manchester">Manchester</option>
-                <option value="Leeds">Leeds</option>
-                <option value="Sheffield">Sheffield</option>
-                <option value="Liverpool">Liverpool</option>
+                <option value="London">London</option>
+                <option value="Stoke">Stoke</option>
               </select>
             </label>
             <label htmlFor={fields.email}>
