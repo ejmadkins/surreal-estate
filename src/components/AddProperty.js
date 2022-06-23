@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Alert from "./Alert";
-// import createProperty from "../requests/createProperty";
+import createProperty from "../requests/createProperty";
 import "../styles/add-property.css";
 
 const AddProperty = () => {
@@ -26,17 +25,7 @@ const AddProperty = () => {
   const handleAddProperty = (event) => {
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
-    axios
-      .post(`http://localhost:4000/api/v1/PropertyListing/`, fields)
-      .then(() => {
-        setAlert({ message: "Property Added", isSuccess: true });
-      })
-      .catch(() => {
-        setAlert({
-          message: "Server error. Please try again later.",
-          isSuccess: false,
-        });
-      });
+    createProperty(fields, setAlert);
   };
 
   const handleFieldChange = (event) => {
