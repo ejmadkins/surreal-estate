@@ -23,7 +23,7 @@ describe("Alert", () => {
 
   it("renders correctly with a success", () => {
     const { asFragment } = render(
-      <Alert message={validProps.alertFail.success} />
+      <Alert message={validProps.alertSuccess.message} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
