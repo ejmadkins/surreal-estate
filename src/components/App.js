@@ -2,8 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
-import "../styles/App.css";
 import AddProperty from "./AddProperty";
+// import getProperty from "../requests/getProperty";
+import "../styles/App.css";
 
 const App = () => {
   return (
