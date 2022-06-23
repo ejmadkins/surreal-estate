@@ -36,8 +36,6 @@ describe("PropertyCard", () => {
     expect(getByText("4")).toHaveClass("property-card__bedrooms");
     expect(getByText("500000")).toHaveClass("property-card__price");
     expect(getByText("Manchester")).toHaveClass("property-card__city");
-    expect(getByText("john.smith@email.com")).toHaveClass(
-      "property-card__email"
-    );
+    expect(getByText("Send Email")).toHaveClass("property-card__email");
   });
 });
