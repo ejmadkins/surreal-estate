@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getProperty = (setResults) => {
+const getProperty = (setResults, setAlert) => {
   return axios
     .get(`http://localhost:4000/api/v1/PropertyListing/`)
     .then((response) => {
@@ -9,6 +9,10 @@ const getProperty = (setResults) => {
       setResults(propertyResults);
     })
     .catch((err) => {
+      setAlert({
+        message: "Server error. Please try again later.",
+        isSuccess: false,
+      });
       console.log(err);
     });
 };
