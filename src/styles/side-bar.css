@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .filter-city {
   padding: 10px;
 }
@@ -9,4 +14,39 @@
 
 .sort-price {
   padding: 10px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding-top: 1rem;
+}
+
+.title-search {
+  height: 3em;
+  width: 15em;
+  background: #e7e7e7;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.search-btn {
+  width: 3rem;
+  height: 2rem;
+  margin-left: -3.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.search-btn:hover {
+  cursor: pointer;
 }
