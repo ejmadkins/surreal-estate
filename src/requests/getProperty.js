@@ -5,7 +5,6 @@ const getProperty = (setResults, setAlert) => {
     .get(`http://localhost:4000/api/v1/PropertyListing/`)
     .then((response) => {
       const propertyResults = response.data;
-      console.log(propertyResults);
       setResults(propertyResults);
     })
     .catch((err) => {
