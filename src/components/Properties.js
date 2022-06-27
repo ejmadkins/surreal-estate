@@ -40,6 +40,7 @@ const Properties = () => {
       <div className="property-cards">
         {results.map((property) => (
           <PropertyCard
+            key={property._id}
             title={property.title}
             type={property.type}
             bathrooms={property.bathrooms}
