@@ -1,13 +1,18 @@
 import React from "react";
+import { GoogleLogin } from "@react-oauth/google";
 // import PropTypes from "prop-types";
 import "../styles/alert.css";
 
-const Login = ({ message, success }) => {
-  if (!message) return null;
+const Login = () => {
   return (
-    <div className={`alert alert-${success ? "success" : "error"}`}>
-      {message}
-    </div>
+    <GoogleLogin
+      onSuccess={(credentialResponse) => {
+        console.log(credentialResponse);
+      }}
+      onError={() => {
+        console.log("Login Failed");
+      }}
+    />
   );
 };
 

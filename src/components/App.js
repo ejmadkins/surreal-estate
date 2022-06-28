@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import { GoogleLogin } from "@react-oauth/google";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
@@ -7,6 +8,10 @@ import AddProperty from "./AddProperty";
 import "../styles/App.css";
 
 const App = () => {
+  const [userID, setUserID] = useState;
+
+  const handleLogin = (response) => {};
+
   return (
     <div>
       <NavBar />
