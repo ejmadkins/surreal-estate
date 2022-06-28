@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import "../styles/alert.css";
 
-const Alert = ({ message, success }) => {
+const Login = ({ message, success }) => {
   if (!message) return null;
   return (
     <div className={`alert alert-${success ? "success" : "error"}`}>
@@ -11,13 +11,9 @@ const Alert = ({ message, success }) => {
   );
 };
 
-export default Alert;
+export default Login;
 
-Alert.defaultProps = {
-  success: false,
-};
-
-Alert.propTypes = {
-  message: PropTypes.string.isRequired,
-  success: PropTypes.bool,
-};
+// Login.propTypes = {
+//   message: PropTypes.string.isRequired,
+//   success: PropTypes.bool,
+// };

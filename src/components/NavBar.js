@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 import "../styles/navbar.css";
 import navIcon from "../assets/icon.png";
 
@@ -20,6 +21,9 @@ const NavBar = () => {
           </Link>
         </li>
       </ul>
+      <div className="navbar-login">
+        <Login />
+      </div>
     </div>
   );
 };
