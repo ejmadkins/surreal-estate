@@ -20,3 +20,8 @@
   color: inherit;
   text-decoration: inherit;
 }
+
+.navbar-login {
+  margin-left: auto;
+  padding-right: 2rem;
+}

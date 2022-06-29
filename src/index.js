@@ -8,10 +8,10 @@ import App from "./components/App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <GoogleOAuthProvider clientId="<your_client_id>">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+      <BrowserRouter>
         <App />
-      </GoogleOAuthProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
