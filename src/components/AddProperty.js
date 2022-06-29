@@ -33,7 +33,6 @@ const AddProperty = () => {
   };
   return (
     <div className="add-property">
-      Add Property Page
       <div className="add-property-card">
         <Alert message={alert.message} success={alert.isSuccess} />
         <div className="add-property-form">
