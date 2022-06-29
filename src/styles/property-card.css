@@ -1,5 +1,5 @@
 .property-card {
-  height: 30rem;
+  height: 32rem;
   width: 30rem;
   padding: 20px;
   margin: 10px;
@@ -27,5 +27,19 @@
   text-decoration: none;
   font-weight: bold;
   color: white;
+  border-radius: 5px;
+}
+
+.property-card__save {
+  width: 100%;
+  box-shadow: none;
+  border-color: deepskyblue;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: deepskyblue;
   border-radius: 5px;
 }
