@@ -5,9 +5,11 @@ import PropertyCard from "./PropertyCard";
 import SideBar from "./SideBar";
 import Alert from "./Alert";
 import getProperty from "../requests/getProperty";
+import createFavourite from "../requests/createFavourite";
 import "../styles/properties.css";
 
-const Properties = () => {
+// eslint-disable-next-line react/prop-types
+const Properties = ({ userID }) => {
   const initialState = {
     alert: {
       message: "",
@@ -31,6 +33,10 @@ const Properties = () => {
       .catch((err) => console.error(err));
   }, [search]);
 
+  const handleSaveProperty = (propertyId) => {
+    createFavourite(propertyId, userID);
+  };
+
   return (
     <div className="properties">
       <div className="sidebar">
@@ -40,6 +46,7 @@ const Properties = () => {
       <div className="property-cards">
         {results.map((property) => (
           <PropertyCard
+            _id={property._id}
             key={property._id}
             title={property.title}
             type={property.type}
@@ -48,6 +55,8 @@ const Properties = () => {
             price={property.price}
             city={property.city}
             email={property.email}
+            userID={userID}
+            onSaveProperty={handleSaveProperty}
           />
         ))}
       </div>

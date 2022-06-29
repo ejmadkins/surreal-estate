@@ -20,7 +20,11 @@ const App = () => {
     <div className="surreal-estate">
       <NavBar onLogin={handleLogin} />
       <Switch>
-        <Route exact path="/" component={Properties} />
+        <Route
+          exact
+          path="/"
+          render={(props) => <Properties {...props} userID={userID} />}
+        />{" "}
         <Route exact path="/add-property" component={AddProperty} />
       </Switch>
     </div>
