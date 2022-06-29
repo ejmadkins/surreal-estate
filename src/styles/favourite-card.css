@@ -1,0 +1,45 @@
+.favourite-card {
+  height: 32rem;
+  width: 30rem;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.favourite-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.favourite-card > h1 {
+  font-size: 20px;
+}
+
+.favourite-card__email {
+  background-color: deepskyblue;
+  padding: 5px;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+
+.favourite-card__save {
+  width: 100%;
+  box-shadow: none;
+  border-color: deepskyblue;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: deepskyblue;
+  border-radius: 5px;
+}

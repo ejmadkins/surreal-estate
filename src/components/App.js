@@ -6,6 +6,7 @@ import jwtDecode from "jwt-decode";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import SavedProperties from "./SavedProperties";
 import "../styles/App.css";
 
 const App = () => {
@@ -18,13 +19,14 @@ const App = () => {
 
   return (
     <div className="surreal-estate">
-      <NavBar onLogin={handleLogin} />
+      <NavBar onLogin={handleLogin} userID={userID} />
       <Switch>
         <Route
           exact
           path="/"
           render={(props) => <Properties {...props} userID={userID} />}
-        />{" "}
+        />
+        <Route exact path="/saved-property" component={SavedProperties} />
         <Route exact path="/add-property" component={AddProperty} />
       </Switch>
     </div>

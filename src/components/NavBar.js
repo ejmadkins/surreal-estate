@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import navIcon from "../assets/icon.png";
 
-const NavBar = ({ onLogin }) => {
+const NavBar = ({ onLogin, userID }) => {
   return (
     <div className="navbar">
       <img className="nav-icon" src={navIcon} alt="nav icon" />
@@ -21,6 +21,13 @@ const NavBar = ({ onLogin }) => {
             Add a Property
           </Link>
         </li>
+        {userID && (
+          <li className="navbar-links-item">
+            <Link className="item" to="/saved-property">
+              Saved Properties
+            </Link>
+          </li>
+        )}
       </ul>
       <div className="navbar-login">
         <GoogleLogin
@@ -30,7 +37,6 @@ const NavBar = ({ onLogin }) => {
           onError={() => {
             console.log("Login Failed");
           }}
-          useOneTap
         />
       </div>
     </div>
