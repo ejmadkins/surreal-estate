@@ -10,7 +10,7 @@ import SavedProperties from "./SavedProperties";
 import "../styles/App.css";
 
 const App = () => {
-  const [userID, setUserID] = useState("loggedin");
+  const [userID, setUserID] = useState("");
 
   const handleLogin = (response) => {
     const userObject = jwtDecode(response.credential);
