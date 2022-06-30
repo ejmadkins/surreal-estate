@@ -33,13 +33,17 @@
 .favourite-card__save {
   width: 100%;
   box-shadow: none;
-  border-color: deepskyblue;
-  background-color: white;
+  border-color: none;
+  background-color: red;
   padding: 5px;
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
   font-weight: bold;
-  color: deepskyblue;
   border-radius: 5px;
+  font: inherit;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
 }
