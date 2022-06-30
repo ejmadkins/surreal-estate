@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import PropertyCard from "./PropertyCard";
+import LoadSpinner from "./LoadSpinner";
 import SideBar from "./SideBar";
 import Alert from "./Alert";
 import getProperty from "../requests/getProperty";
@@ -9,7 +10,7 @@ import createFavourite from "../requests/createFavourite";
 import "../styles/properties.css";
 
 // eslint-disable-next-line react/prop-types
-const Properties = ({ userID }) => {
+const Properties = ({ userID, loading, setLoading }) => {
   const initialState = {
     alert: {
       message: "",
@@ -22,14 +23,18 @@ const Properties = ({ userID }) => {
 
   useEffect(() => {
     setAlert({ message: "", isSuccess: false });
-    getProperty(setResults, setAlert);
+    getProperty(setResults, setAlert, setLoading);
   }, []);
 
   const { search } = useLocation();
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
-      .then(({ data }) => setResults(data))
+      .then(({ data }) => {
+        setResults(data);
+        setLoading(false);
+      })
       .catch((err) => console.error(err));
   }, [search]);
 
@@ -43,23 +48,27 @@ const Properties = ({ userID }) => {
         <SideBar />
       </div>
       <Alert message={alert.message} success={alert.isSuccess} />
-      <div className="property-cards">
-        {results.map((property) => (
-          <PropertyCard
-            _id={property._id}
-            key={property._id}
-            title={property.title}
-            type={property.type}
-            bathrooms={property.bathrooms}
-            bedrooms={property.bedrooms}
-            price={property.price}
-            city={property.city}
-            email={property.email}
-            userID={userID}
-            onSaveProperty={handleSaveProperty}
-          />
-        ))}
-      </div>
+      {loading ? (
+        <LoadSpinner />
+      ) : (
+        <div className="property-cards">
+          {results.map((property) => (
+            <PropertyCard
+              _id={property._id}
+              key={property._id}
+              title={property.title}
+              type={property.type}
+              bathrooms={property.bathrooms}
+              bedrooms={property.bedrooms}
+              price={property.price}
+              city={property.city}
+              email={property.email}
+              userID={userID}
+              onSaveProperty={handleSaveProperty}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

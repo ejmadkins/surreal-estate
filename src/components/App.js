@@ -11,6 +11,7 @@ import "../styles/App.css";
 
 const App = () => {
   const [userID, setUserID] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const handleLogin = (response) => {
     const userObject = jwtDecode(response.credential);
@@ -24,7 +25,14 @@ const App = () => {
         <Route
           exact
           path="/"
-          render={(props) => <Properties {...props} userID={userID} />}
+          render={(props) => (
+            <Properties
+              {...props}
+              userID={userID}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          )}
         />
         <Route exact path="/saved-property" component={SavedProperties} />
         <Route exact path="/add-property" component={AddProperty} />

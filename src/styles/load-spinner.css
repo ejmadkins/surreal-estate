@@ -1,0 +1,12 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+  width: 100%;
+}
+
+.moon-loader {
+  display: "block";
+  margin: "0 auto";
+  border-color: deepskyblue;
+}
