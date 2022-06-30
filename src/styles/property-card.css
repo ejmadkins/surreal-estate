@@ -42,4 +42,7 @@
   font-weight: bold;
   color: deepskyblue;
   border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+  font-weight: bold;
 }
