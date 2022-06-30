@@ -3,10 +3,11 @@ import FavouriteCard from "./FavouriteCard";
 import SideBar from "./SideBar";
 import Alert from "./Alert";
 import getFavourite from "../requests/getFavourite";
+import deleteFavourite from "../requests/deleteFavourite";
 import "../styles/properties.css";
 
 // eslint-disable-next-line react/prop-types
-const SavedProperties = () => {
+const SavedProperties = ({ userID }) => {
   const initialState = {
     alert: {
       message: "",
@@ -21,6 +22,13 @@ const SavedProperties = () => {
     setAlert({ message: "", isSuccess: false });
     getFavourite(setFavouriteResults);
   }, []);
+
+  const handleDeleteFavourite = (propertyId) => {
+    deleteFavourite(propertyId, userID);
+    setFavouriteResults((result) =>
+      result.filter((item) => item.propertyListing._id !== propertyId)
+    );
+  };
 
   return (
     <div className="properties">
@@ -40,6 +48,7 @@ const SavedProperties = () => {
             price={property.propertyListing.price}
             city={property.propertyListing.city}
             email={property.propertyListing.email}
+            onDeleteFavourite={handleDeleteFavourite}
           />
         ))}
       </div>

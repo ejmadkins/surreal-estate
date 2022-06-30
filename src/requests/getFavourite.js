@@ -6,6 +6,7 @@ const getFavourite = (setFavouriteResults, setAlert) => {
     .then((response) => {
       const favouriteResults = response.data;
       setFavouriteResults(favouriteResults);
+      console.log(favouriteResults);
     })
     .catch((err) => {
       setAlert({

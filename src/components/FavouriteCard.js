@@ -8,7 +8,7 @@ import {
   faLocationPin,
   faBuilding,
   faEnvelope,
-  faStar,
+  faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import "../styles/favourite-card.css";
 
@@ -21,8 +21,7 @@ const FavouriteCard = ({
   price,
   city,
   email,
-  userID,
-  onSaveProperty,
+  onDeleteFavourite,
 }) => {
   return (
     <div className="favourite-card">
@@ -50,15 +49,13 @@ const FavouriteCard = ({
       <a className="favourite-card__email" href={`mailto:${email}`}>
         <FontAwesomeIcon icon={faEnvelope} /> Send Email
       </a>
-      {userID && (
-        <button
-          type="button"
-          className="favourite-card__save"
-          onClick={() => onSaveProperty(_id)}
-        >
-          <FontAwesomeIcon icon={faStar} /> Save
-        </button>
-      )}
+      <button
+        type="button"
+        className="favourite-card__save"
+        onClick={() => onDeleteFavourite(_id)}
+      >
+        <FontAwesomeIcon icon={faTrashCan} /> Delete
+      </button>
     </div>
   );
 };
